@@ -8,7 +8,7 @@ const MembersList = props => {
       <ul members={members}>
         {members.map(member => (
           <li>
-            {member.name}, {member.email}, {member.role}
+            {member.name}, {member.email}, {member.role} <button>Edit</button>
           </li>
         ))}
       </ul>

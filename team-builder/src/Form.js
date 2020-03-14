@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MembersList from "./MembersList";
+import "./Form.css";
 
 const Form = props => {
   const { members } = props;
@@ -25,37 +26,39 @@ const Form = props => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">
-        Name:
-        <input
-          onChange={onInputChange}
-          value={formData.name}
-          type="text"
-          name="name"
-        />
-      </label>
-      <label htmlFor="email">
-        Email:
-        <input
-          onChange={onInputChange}
-          value={formData.email}
-          type="email"
-          name="email"
-        />
-      </label>
-      <label htmlFor="role">
-        Role:
-        <input
-          onChange={onInputChange}
-          value={formData.role}
-          type="text"
-          name="role"
-        />
-      </label>
-      <button>Add Member</button>
-      <MembersList members={members} />
-    </form>
+    <div className="form-container">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">
+          Name:
+          <input
+            onChange={onInputChange}
+            value={formData.name}
+            type="text"
+            name="name"
+          />
+        </label>
+        <label htmlFor="email">
+          Email:
+          <input
+            onChange={onInputChange}
+            value={formData.email}
+            type="email"
+            name="email"
+          />
+        </label>
+        <label htmlFor="role">
+          Role:
+          <input
+            onChange={onInputChange}
+            value={formData.role}
+            type="text"
+            name="role"
+          />
+        </label>
+        <button>Add Member</button>
+        <MembersList members={members} />
+      </form>
+    </div>
   );
 };
 
