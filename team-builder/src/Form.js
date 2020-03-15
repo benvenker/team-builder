@@ -3,7 +3,8 @@ import MembersList from "./MembersList";
 import "./Form.css";
 
 const Form = props => {
-  const { members } = props;
+  console.log("form props", props);
+  const { members, handleMemberEdit, addNewMember } = props;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,7 +22,7 @@ const Form = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    members.push(formData);
+    addNewMember(formData);
     setFormData({ name: "", email: "", role: "" });
   };
 
@@ -56,7 +57,7 @@ const Form = props => {
           />
         </label>
         <button>Add Member</button>
-        <MembersList members={members} />
+        <MembersList members={members} handleMemberEdit={handleMemberEdit} />
       </form>
     </div>
   );
