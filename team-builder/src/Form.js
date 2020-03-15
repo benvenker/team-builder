@@ -4,7 +4,7 @@ import "./Form.css";
 
 const Form = props => {
   console.log("form props", props);
-  const { members, handleMemberEdit, addNewMember } = props;
+  const { members, handleMemberEdit, addNewMember, memberToEdit } = props;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +12,6 @@ const Form = props => {
   });
 
   const onInputChange = event => {
-    console.log(event.target.value);
     event.preventDefault();
     setFormData({
       ...formData,
@@ -25,6 +24,13 @@ const Form = props => {
     addNewMember(formData);
     setFormData({ name: "", email: "", role: "" });
   };
+
+  useEffect(() => {
+    setFormData(memberToEdit);
+    return () => {
+      // clean up the thing
+    };
+  }, [memberToEdit]);
 
   return (
     <div className="form-container">
