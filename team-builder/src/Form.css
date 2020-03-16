@@ -12,6 +12,7 @@ input[type="email"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  outline: none;
 }
 
 form {
@@ -31,6 +32,11 @@ button {
   align-self: left;
 }
 
-button:hover {
-  background-color: rgb(22, 56, 151);
+button:hover,
+button:disabled {
+  background-color: rgb(46, 83, 184);
+}
+
+button:focus {
+  outline: 0;
 }
