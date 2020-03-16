@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import MembersList from "./MembersList";
 import "./Form.css";
 
 const Form = props => {
-  console.log("form props", props);
-  const { members, handleMemberEdit, addNewMember, memberToEdit } = props;
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    role: ""
-  });
+  // console.log("form props", props);
+  const {
+    members,
+    handleMemberEdit,
+    addNewMember,
+    memberToEdit,
+    editMember,
+    isEditing,
+    formData,
+    setFormData
+  } = props;
 
   const onInputChange = event => {
     event.preventDefault();
@@ -20,11 +24,13 @@ const Form = props => {
   };
 
   const handleSubmit = event => {
+    console.log("handleSubmit called");
     event.preventDefault();
     addNewMember(formData);
     setFormData({ name: "", email: "", role: "" });
   };
 
+  // Populate the form with the member to edit
   useEffect(() => {
     setFormData(memberToEdit);
     return () => {
@@ -34,7 +40,7 @@ const Form = props => {
 
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={!isEditing ? handleSubmit : editMember}>
         <label htmlFor="name">
           Name:
           <input
@@ -62,8 +68,14 @@ const Form = props => {
             name="role"
           />
         </label>
-        <button>Add Member</button>
-        <MembersList members={members} handleMemberEdit={handleMemberEdit} />
+        <button>
+          {memberToEdit.name !== "" ? "Update Member" : "Add Member"}
+        </button>
+        <MembersList
+          members={members}
+          edidtMember={editMember}
+          handleMemberEdit={handleMemberEdit}
+        />
       </form>
     </div>
   );
