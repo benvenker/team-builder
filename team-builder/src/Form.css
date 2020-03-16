@@ -1,6 +1,11 @@
+.form-container {
+  /* display: flex;
+  justify-content: space-between; */
+}
+
 input[type="text"],
 input[type="email"] {
-  width: 50%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: block;
@@ -11,4 +16,21 @@ input[type="email"] {
 
 form {
   padding: 10px;
+  width: 33%;
+}
+
+button {
+  width: 150px;
+  border: 1px solid rgb(8, 23, 92);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(22, 56, 151);
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+  align-self: left;
+}
+
+button:hover {
+  background-color: rgb(22, 56, 151);
 }

@@ -67,12 +67,12 @@ const Form = props => {
         <button>
           {memberToEdit.name !== "" ? "Update Member" : "Add Member"}
         </button>
-        <MembersList
-          members={members}
-          edidtMember={editMember}
-          handleEditClick={handleEditClick}
-        />
       </form>
+      <MembersList
+        members={members}
+        edidtMember={editMember}
+        handleEditClick={handleEditClick}
+      />
     </div>
   );
 };

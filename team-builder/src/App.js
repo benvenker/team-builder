@@ -41,11 +41,13 @@ function App() {
       newMembers[index] = formData;
       setMembers(newMembers);
       setFormData({ name: "", email: "", role: "" });
+      setMemberToEdit({ name: "", email: "", role: "" });
     }
   };
 
   return (
     <div className="App">
+      <h1>Team Member Entry Form</h1>
       <Form
         className="form"
         members={members}
