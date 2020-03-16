@@ -7,28 +7,30 @@ const MembersList = props => {
     <div>
       <h2>Members</h2>
       <table members={members}>
-        <tr className="row header">
-          <td className="col">Name</td>
-          <td className="col">Email</td>
-          <td className="col">Role</td>
-        </tr>
-        {members.map((member, i) => (
-          <tr key={i}>
-            <td>{member.name}</td>
-            <td>{member.email}</td>
-            <td>{member.role} </td>
-            <td>
-              <span>
-                <div
-                  className="edit-button"
-                  onClick={() => handleEditClick(member)}
-                >
-                  Edit
-                </div>
-              </span>
-            </td>
+        <tbody>
+          <tr className="row header">
+            <th className="col">Name</th>
+            <th className="col">Email</th>
+            <th className="col">Role</th>
           </tr>
-        ))}
+          {members.map((member, i) => (
+            <tr key={i}>
+              <td>{member.name}</td>
+              <td>{member.email}</td>
+              <td>{member.role} </td>
+              <td>
+                <span>
+                  <div
+                    className="edit-button"
+                    onClick={() => handleEditClick(member)}
+                  >
+                    Edit
+                  </div>
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   ) : (

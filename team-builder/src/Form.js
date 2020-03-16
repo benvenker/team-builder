@@ -29,11 +29,6 @@ const Form = props => {
     setFormData({ name: "", email: "", role: "" });
   };
 
-  // Populate the form with the member to edit
-  useEffect(() => {
-    setFormData(memberToEdit);
-  }, [memberToEdit]);
-
   return (
     <div className="form-container">
       <form onSubmit={!isEditing ? handleSubmit : editMember}>

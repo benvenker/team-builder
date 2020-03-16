@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./Form";
 
@@ -21,6 +21,16 @@ function App() {
     console.log("isEditing", isEditing);
     setMemberToEdit(member);
   };
+
+  // Populate the form with the member to edit
+  useEffect(() => {
+    console.log("usingEffect!");
+    setFormData(memberToEdit);
+  }, [memberToEdit]);
+
+  useEffect(() => {
+    console.log("usingMemberUpdateEffect!");
+  }, [members]);
 
   const addNewMember = member => {
     const newMember = {
