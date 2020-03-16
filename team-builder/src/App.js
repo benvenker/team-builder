@@ -16,12 +16,10 @@ function App() {
     role: ""
   });
 
-  const handleMemberEdit = member => {
-    // console.log("edit member clicked", member);
+  const handleEditClick = member => {
     setIsEditing(true);
     console.log("isEditing", isEditing);
     setMemberToEdit(member);
-    // console.log("memberToEdit", memberToEdit);
   };
 
   const addNewMember = member => {
@@ -39,12 +37,11 @@ function App() {
     event.preventDefault();
     let newMembers;
     if (isEditing) {
-      console.log("members", members);
-
       const index = members.findIndex(member => member.id === formData.id);
-      newMembers = [...members]; // important to create a copy, otherwise you'll modify state outside of setState call
+      newMembers = [...members]; // important to create a copy, otherwise you'll modify state
       newMembers[index] = formData;
       setMembers(newMembers);
+      setFormData({ name: "", email: "", role: "" });
     }
   };
 
@@ -54,7 +51,7 @@ function App() {
         className="form"
         members={members}
         memberToEdit={memberToEdit}
-        handleMemberEdit={handleMemberEdit}
+        handleEditClick={handleEditClick}
         addNewMember={addNewMember}
         editMember={editMember}
         isEditing={isEditing}

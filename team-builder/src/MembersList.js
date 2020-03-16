@@ -2,8 +2,7 @@ import React from "react";
 import "./MembersList.css";
 
 const MembersList = props => {
-  // console.log("memberList pops: ", props);
-  const { members, handleMemberEdit, editMember } = props;
+  const { members, handleEditClick } = props;
   return (
     <div>
       <h1>Members</h1>
@@ -14,7 +13,7 @@ const MembersList = props => {
             <span>
               <div
                 className="edit-button"
-                onClick={() => handleMemberEdit(member)}
+                onClick={() => handleEditClick(member)}
               >
                 Edit
               </div>

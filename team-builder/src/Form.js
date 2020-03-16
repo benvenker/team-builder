@@ -3,10 +3,9 @@ import MembersList from "./MembersList";
 import "./Form.css";
 
 const Form = props => {
-  // console.log("form props", props);
   const {
     members,
-    handleMemberEdit,
+    handleEditClick,
     addNewMember,
     memberToEdit,
     editMember,
@@ -74,7 +73,7 @@ const Form = props => {
         <MembersList
           members={members}
           edidtMember={editMember}
-          handleMemberEdit={handleMemberEdit}
+          handleEditClick={handleEditClick}
         />
       </form>
     </div>
