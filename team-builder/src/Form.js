@@ -32,9 +32,6 @@ const Form = props => {
   // Populate the form with the member to edit
   useEffect(() => {
     setFormData(memberToEdit);
-    return () => {
-      // clean up the thing
-    };
   }, [memberToEdit]);
 
   return (

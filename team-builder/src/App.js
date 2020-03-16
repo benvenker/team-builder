@@ -35,10 +35,9 @@ function App() {
 
   const editMember = event => {
     event.preventDefault();
-    let newMembers;
+    let newMembers = [...members]; // important to create a copy, otherwise you'll modify state
     if (isEditing) {
       const index = members.findIndex(member => member.id === formData.id);
-      newMembers = [...members]; // important to create a copy, otherwise you'll modify state
       newMembers[index] = formData;
       setMembers(newMembers);
       setFormData({ name: "", email: "", role: "" });
