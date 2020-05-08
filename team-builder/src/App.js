@@ -7,16 +7,16 @@ function App() {
   const [memberToEdit, setMemberToEdit] = useState({
     name: "",
     email: "",
-    role: ""
+    role: "",
   });
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    role: ""
+    role: "",
   });
 
-  const handleEditClick = member => {
+  const handleEditClick = (member) => {
     setIsEditing(true);
     console.log("isEditing", isEditing);
     setMemberToEdit(member);
@@ -32,27 +32,28 @@ function App() {
     console.log("usingMemberUpdateEffect!");
   }, [members]);
 
-  const addNewMember = member => {
+  const addNewMember = (member) => {
     const newMember = {
       name: member.name,
       email: member.email,
       role: member.role,
-      id: Date.now()
+      id: Date.now(),
     };
 
     setMembers([...members, newMember]);
   };
 
-  const editMember = event => {
+  const editMember = (event) => {
     event.preventDefault();
     let newMembers = [...members]; // important to create a copy, otherwise you'll modify state
     if (isEditing) {
-      const index = members.findIndex(member => member.id === formData.id);
+      const index = members.findIndex((member) => member.id === formData.id);
       newMembers[index] = formData;
       setMembers(newMembers);
       setFormData({ name: "", email: "", role: "" });
       setMemberToEdit({ name: "", email: "", role: "" });
     }
+    setIsEditing(false);
   };
 
   return (
@@ -66,6 +67,7 @@ function App() {
         addNewMember={addNewMember}
         editMember={editMember}
         isEditing={isEditing}
+        setIsEditing={setIsEditing}
         formData={formData}
         setFormData={setFormData}
       />

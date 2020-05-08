@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import MembersList from "./MembersList";
 import "./Form.css";
 
-const Form = props => {
+const Form = (props) => {
+  console.log("form props: ", props);
   const {
     members,
     handleEditClick,
@@ -10,23 +11,25 @@ const Form = props => {
     memberToEdit,
     editMember,
     isEditing,
+    setIsEditing,
     formData,
-    setFormData
+    setFormData,
   } = props;
 
-  const onInputChange = event => {
+  const onInputChange = (event) => {
     event.preventDefault();
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     console.log("handleSubmit called");
     event.preventDefault();
     addNewMember(formData);
     setFormData({ name: "", email: "", role: "" });
+    setIsEditing(false);
   };
 
   return (
