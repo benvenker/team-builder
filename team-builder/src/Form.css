@@ -27,6 +27,8 @@ input[type="email"] {
 
 .form-container input {
   font-size: 1em;
+  background-color: rgb(249, 247, 247);
+  border: none;
 }
 
 button {
