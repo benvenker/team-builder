@@ -1,8 +1,8 @@
 import React from "react";
 import "./MembersList.css";
 
-const MembersList = props => {
-  const { members, handleEditClick } = props;
+const MembersList = (props) => {
+  const { members, handleEditClick, deleteMember } = props;
   return members.length > 0 ? (
     <div>
       <h2>Members</h2>
@@ -27,6 +27,12 @@ const MembersList = props => {
                     Edit
                   </div>
                 </span>
+              </td>
+              <td
+                className="delete-button"
+                onClick={() => deleteMember(member.id)}
+              >
+                X
               </td>
             </tr>
           ))}

@@ -27,3 +27,7 @@ td {
   padding: 5px;
   margin: 5px;
 }
+
+.delete-button {
+  color: rgb(186, 41, 41);
+}

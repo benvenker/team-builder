@@ -18,19 +18,15 @@ function App() {
 
   const handleEditClick = (member) => {
     setIsEditing(true);
-    console.log("isEditing", isEditing);
     setMemberToEdit(member);
   };
 
   // Populate the form with the member to edit
   useEffect(() => {
-    console.log("usingEffect!");
     setFormData(memberToEdit);
   }, [memberToEdit]);
 
-  useEffect(() => {
-    console.log("usingMemberUpdateEffect!");
-  }, [members]);
+  // useEffect(() => {}, [members]);
 
   const addNewMember = (member) => {
     const newMember = {
@@ -56,6 +52,13 @@ function App() {
     setIsEditing(false);
   };
 
+  const deleteMember = (id) => {
+    console.log("clicked delete!");
+    console.log("delete id: ", id);
+
+    return setMembers(members.filter((member) => member.id !== id));
+  };
+
   return (
     <div className="App">
       <h1>Team Member Entry Form</h1>
@@ -66,6 +69,7 @@ function App() {
         handleEditClick={handleEditClick}
         addNewMember={addNewMember}
         editMember={editMember}
+        deleteMember={deleteMember}
         isEditing={isEditing}
         setIsEditing={setIsEditing}
         formData={formData}

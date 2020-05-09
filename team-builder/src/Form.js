@@ -3,13 +3,13 @@ import MembersList from "./MembersList";
 import "./Form.css";
 
 const Form = (props) => {
-  console.log("form props: ", props);
   const {
     members,
     handleEditClick,
     addNewMember,
     memberToEdit,
     editMember,
+    deleteMember,
     isEditing,
     setIsEditing,
     formData,
@@ -25,7 +25,6 @@ const Form = (props) => {
   };
 
   const handleSubmit = (event) => {
-    console.log("handleSubmit called");
     event.preventDefault();
     addNewMember(formData);
     setFormData({ name: "", email: "", role: "" });
@@ -68,7 +67,8 @@ const Form = (props) => {
       </form>
       <MembersList
         members={members}
-        edidtMember={editMember}
+        editMember={editMember}
+        deleteMember={deleteMember}
         handleEditClick={handleEditClick}
       />
     </div>
