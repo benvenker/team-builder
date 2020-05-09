@@ -11,13 +11,12 @@ input[type="email"] {
 }
 
 .form-container {
-  color: gray;
+  color: rgb(104, 103, 103);
   background-color: white;
   margin: auto;
   width: 33%;
   padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid rgb(216, 216, 216);
   border-radius: 5px;
   box-shadow: 5px 5px 10px #dfdfdf;
 }
