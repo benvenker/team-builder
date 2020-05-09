@@ -31,3 +31,7 @@ td {
 .delete-button {
   color: rgb(186, 41, 41);
 }
+
+.delete-button:hover {
+  cursor: pointer;
+}

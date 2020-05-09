@@ -1,6 +1,49 @@
-.App {
-  margin: 10px;
+body {
+  background-color: aliceblue;
 }
+
+.App {
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(136, 136, 136);
+}
+
+h2 {
+  text-align: center;
+  color: gray;
+}
+.members-list {
+  background-color: white;
+  padding: 20px 0 20px 20px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #e3e2e2;
+}
+
+.members-list > table {
+  margin: auto;
+}
+
+.starting-message {
+  text-align: center;
+  font-size: 1.3em;
+  color: gray;
+}
+
+table {
+  color: gray;
+  width: 90%;
+}
+td {
+  text-align: center;
+}
+/*
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +78,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

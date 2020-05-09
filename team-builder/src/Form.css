@@ -10,13 +10,29 @@ input[type="email"] {
   outline: none;
 }
 
-form {
-  padding: 10px;
+.form-container {
+  color: gray;
+  background-color: white;
+  margin: auto;
   width: 33%;
+  padding: 20px;
   margin-bottom: 20px;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #dfdfdf;
+}
+
+.form-container label {
+  font-weight: bold;
+}
+
+.form-container input {
+  font-size: 1em;
 }
 
 button {
+  display: block;
+  margin: 10px auto 0 auto;
   width: 150px;
   border-radius: 5px;
   padding: 10px;
@@ -25,6 +41,7 @@ button {
   font-weight: bold;
   margin-top: 10px;
   cursor: pointer;
+  box-shadow: 5px 5px 10px #dfdfdf;
 }
 
 button.submit-button {
@@ -32,16 +49,16 @@ button.submit-button {
 }
 .submit-button:hover,
 .submit-button:disabled {
-  background-color: rgb(29, 198, 57);
+  background-color: rgb(114, 230, 133);
 }
 
 .update-button {
-  background-color: rgb(46, 83, 184);
+  background-color: rgb(81, 122, 235);
 }
 
 .update-button:hover,
 .updatet-button:disabled {
-  background-color: rgb(46, 83, 184);
+  background-color: rgb(93, 116, 177);
 }
 
 button:focus {

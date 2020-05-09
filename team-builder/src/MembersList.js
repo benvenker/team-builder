@@ -4,8 +4,8 @@ import "./MembersList.css";
 const MembersList = (props) => {
   const { members, handleEditClick, deleteMember } = props;
   return members.length > 0 ? (
-    <div>
-      <h2>Members</h2>
+    <div className="members-list">
+      <h2 className="table-header">Members</h2>
       <table members={members}>
         <tbody>
           <tr className="row header">
@@ -42,7 +42,9 @@ const MembersList = (props) => {
   ) : (
     <div>
       <br></br>
-      Enter some team members to get started...
+      <div className="starting-message">
+        Enter some team members to get started...
+      </div>
     </div>
   );
 };
