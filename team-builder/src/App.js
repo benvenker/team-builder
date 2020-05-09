@@ -3,6 +3,11 @@ import "./App.css";
 import Form from "./Form";
 
 function App() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    role: "",
+  });
   const [members, setMembers] = useState([]);
   const [memberToEdit, setMemberToEdit] = useState({
     name: "",
@@ -10,23 +15,6 @@ function App() {
     role: "",
   });
   const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    role: "",
-  });
-
-  const handleEditClick = (member) => {
-    setIsEditing(true);
-    setMemberToEdit(member);
-  };
-
-  // Populate the form with the member to edit
-  useEffect(() => {
-    setFormData(memberToEdit);
-  }, [memberToEdit]);
-
-  // useEffect(() => {}, [members]);
 
   const addNewMember = (member) => {
     const newMember = {
@@ -38,6 +26,16 @@ function App() {
 
     setMembers([...members, newMember]);
   };
+
+  const handleEditClick = (member) => {
+    setIsEditing(true);
+    setMemberToEdit(member);
+  };
+
+  // Populate the form with the member to edit
+  useEffect(() => {
+    setFormData(memberToEdit);
+  }, [memberToEdit]);
 
   const editMember = (event) => {
     event.preventDefault();
