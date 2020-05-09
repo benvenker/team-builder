@@ -61,7 +61,10 @@ const Form = (props) => {
             name="role"
           />
         </label>
-        <button disabled={formData.name === ""}>
+        <button
+          disabled={formData.name === ""}
+          className={isEditing ? "update-button" : "submit-button"}
+        >
           {memberToEdit.name !== "" ? "Update Member" : "Add Member"}
         </button>
       </form>

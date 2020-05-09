@@ -23,18 +23,29 @@ form {
 
 button {
   width: 150px;
-  border: 1px solid rgb(8, 23, 92);
+  /* border: 1px solid rgb(8, 23, 92); */
   border-radius: 5px;
   padding: 10px;
-  background-color: rgb(22, 56, 151);
   color: white;
   font-size: 14px;
   margin-top: 10px;
   cursor: pointer;
 }
 
-button:hover,
-button:disabled {
+button.submit-button {
+  background-color: rgb(29, 198, 57);
+}
+.submit-button:hover,
+.submit-button:disabled {
+  background-color: rgb(29, 198, 57);
+}
+
+.update-button {
+  background-color: rgb(46, 83, 184);
+}
+
+.update-button:hover,
+.updatet-button:disabled {
   background-color: rgb(46, 83, 184);
 }
 
