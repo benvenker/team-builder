@@ -1,17 +1,50 @@
 import React from "react";
+import "./MembersList.css";
 
-const MembersList = props => {
-  const { members } = props;
-  return (
+const MembersList = (props) => {
+  const { members, handleEditClick, deleteMember } = props;
+  return members.length > 0 ? (
+    <div className="members-list">
+      <h2 className="table-header">Members</h2>
+      <table members={members}>
+        <tbody>
+          <tr className="row header">
+            <th className="col">Name</th>
+            <th className="col">Email</th>
+            <th className="col">Role</th>
+          </tr>
+          {members.map((member, i) => (
+            <tr key={i}>
+              <td>{member.name}</td>
+              <td>{member.email}</td>
+              <td>{member.role} </td>
+              <td>
+                <span>
+                  <div
+                    className="edit-button"
+                    onClick={() => handleEditClick(member)}
+                  >
+                    Edit
+                  </div>
+                </span>
+              </td>
+              <td
+                className="delete-button"
+                onClick={() => deleteMember(member.id)}
+              >
+                X
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : (
     <div>
-      <h1>Members</h1>
-      <ul members={members}>
-        {members.map(member => (
-          <li>
-            {member.name}, {member.email}, {member.role}
-          </li>
-        ))}
-      </ul>
+      <br></br>
+      <div className="starting-message">
+        Enter some team members to get started...
+      </div>
     </div>
   );
 };

@@ -1,15 +1,78 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./Form";
-import MembersList from "./MembersList";
 
 function App() {
-  const [members, setMember] = useState([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    role: "",
+  });
+  const [members, setMembers] = useState([]);
+  const [memberToEdit, setMemberToEdit] = useState({
+    name: "",
+    email: "",
+    role: "",
+  });
+  const [isEditing, setIsEditing] = useState(false);
+
+  const addNewMember = (member) => {
+    const newMember = {
+      name: member.name,
+      email: member.email,
+      role: member.role,
+      id: Date.now(),
+    };
+
+    setMembers([...members, newMember]);
+  };
+
+  const handleEditClick = (member) => {
+    setIsEditing(true);
+    setMemberToEdit(member);
+  };
+
+  // Populate the form with the member to edit
+  useEffect(() => {
+    setFormData(memberToEdit);
+  }, [memberToEdit]);
+
+  const editMember = (event) => {
+    event.preventDefault();
+    let newMembers = [...members]; // important to create a copy, otherwise you'll modify state
+    if (isEditing) {
+      const index = members.findIndex((member) => member.id === formData.id);
+      newMembers[index] = formData;
+      setMembers(newMembers);
+      setFormData({ name: "", email: "", role: "" });
+      setMemberToEdit({ name: "", email: "", role: "" });
+    }
+    setIsEditing(false);
+  };
+
+  const deleteMember = (id) => {
+    console.log("clicked delete!");
+    console.log("delete id: ", id);
+
+    return setMembers(members.filter((member) => member.id !== id));
+  };
 
   return (
     <div className="App">
-      <Form className="form" members={members} />
+      <h1>Team Member Entry Form</h1>
+      <Form
+        className="form"
+        members={members}
+        memberToEdit={memberToEdit}
+        handleEditClick={handleEditClick}
+        addNewMember={addNewMember}
+        editMember={editMember}
+        deleteMember={deleteMember}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
+        formData={formData}
+        setFormData={setFormData}
+      />
     </div>
   );
 }

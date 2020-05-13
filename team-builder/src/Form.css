@@ -1,0 +1,67 @@
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form-container {
+  color: rgb(104, 103, 103);
+  background-color: white;
+  margin: auto;
+  width: 33%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #dfdfdf;
+}
+
+.form-container label {
+  font-weight: bold;
+}
+
+.form-container input {
+  font-size: 1em;
+  background-color: rgb(249, 247, 247);
+  border: none;
+}
+
+button {
+  display: block;
+  margin: 10px auto 0 auto;
+  width: 150px;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px #dfdfdf;
+}
+
+button.submit-button {
+  background-color: rgb(29, 198, 57);
+}
+.submit-button:hover,
+.submit-button:disabled {
+  background-color: rgb(114, 230, 133);
+}
+
+.update-button {
+  background-color: rgb(81, 122, 235);
+}
+
+.update-button:hover,
+.updatet-button:disabled {
+  background-color: rgb(93, 116, 177);
+}
+
+button:focus {
+  outline: 0;
+}

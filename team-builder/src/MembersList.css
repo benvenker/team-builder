@@ -1,0 +1,37 @@
+.edit-button {
+  padding: 5px;
+  border: 1px solid rgb(119, 119, 119);
+  color: rgb(119, 119, 119);
+  border-radius: 5px;
+  width: 50px;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.edit-button:hover {
+  border: 1px solid rgb(80, 80, 80);
+  color: rgb(80, 80, 80);
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+}
+
+.header td {
+  font-weight: bold;
+}
+
+td {
+  padding: 5px;
+  margin: 5px;
+}
+
+.delete-button {
+  color: rgb(186, 41, 41);
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
